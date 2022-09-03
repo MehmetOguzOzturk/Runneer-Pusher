@@ -276,9 +276,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50d8b021f819502418282862c5249d0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lerpSpeed: 0
+  lerpSpeed: 0.05
   myIndex: 0
+  index: 0
   followedIndex: 0
+  isSameColor: 0
+  isPushed: 0
+  tweenTime: 0
 --- !u!114 &-5417625911981309871
 MonoBehaviour:
   m_ObjectHideFlags: 0

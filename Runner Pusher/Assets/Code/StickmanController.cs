@@ -16,7 +16,7 @@ public class StickmanController : MonoBehaviour
     public bool isSameColor;
     public bool isPushed;
     
-    float refFloat = 0;
+    
     public float tweenTime;
     bool stopCheck;
 
@@ -36,7 +36,7 @@ public class StickmanController : MonoBehaviour
             followedIndex = 0;
         }
         target = activeList[followedIndex];
-        lerpSpeed = 10;
+        
     }
 
     public void FindIndex()
@@ -95,7 +95,7 @@ public class StickmanController : MonoBehaviour
             return;
        
         float currentLerpSpeed = lerpSpeed + Vector3.Distance(activeList[followedIndex].transform.position, transform.position) * 10;
-        float posX = Mathf.SmoothDamp(transform.position.x, target.transform.position.x - 0.5f + ((float)myIndex % 3) / 2, ref refFloat, currentLerpSpeed * Time.deltaTime);
+        float posX = Mathf.Lerp(transform.position.x, target.transform.position.x - 0.5f + ((float)myIndex % 3) / 2,  currentLerpSpeed * Time.deltaTime);
         float posZ = -(Mathf.Floor(index / 3) / 2) - 0.45f;
         transform.position = new Vector3(posX, transform.position.y, activeList[0].transform.position.z + posZ);
     }
